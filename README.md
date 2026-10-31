@@ -1,56 +1,155 @@
-# Welcome to your Expo app 👋
+# Habit Tracker App 📱
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A personal productivity and health-tracking application built with **React Native, Expo, and TypeScript**. The goal of this project is to help users build consistent habits, monitor daily activities, and understand their progress through a simple mobile interface.
 
-## Get started
+## ✨ Features
 
-1. Install dependencies
+### Daily Habit Tracking
+- Create and manage daily habits.
+- Track habit completion.
+- View progress and completion statistics.
 
-   ```bash
-   npm install
-   ```
+### 💧 Water Tracker
+- Track daily water intake.
+- Set a daily water consumption goal.
+- Record water intake in milliliters.
+- View progress toward the daily goal.
+- Save health data locally.
 
-2. Start the app
+### 👟 Steps Tracker
+- Track steps using Android device sensors where supported.
+- View daily step progress.
+- Store step history locally.
+- Integrate step records with the calendar.
 
-   ```bash
-   npx expo start
-   ```
+### 📅 Calendar
+- View daily habit and step-tracking history.
+- Select a date to review recorded activity.
+- Identify dates with tracked activity.
 
-In the output, you'll find options to open the app in a
+### 📊 Statistics & Health Summary
+- View daily habit completion.
+- Review weekly habit progress.
+- See overall habit statistics.
+- Monitor water intake and step-goal progress.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 🚀 Planned Features
+- Native Android screen-time monitoring using Kotlin and Android's `UsageStatsManager`.
+- Usage Access permission flow.
+- App-wise screen-time breakdown.
+- Daily screen-time goals and usage history.
+- Focus timer and digital wellbeing statistics.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+> **Note:** Native screen-time monitoring is planned and is not yet confirmed as implemented. It will require an Android development build and user-granted Usage Access.
 
-## Get a fresh project
+## 🛠️ Tech Stack
 
-When you're ready, run:
+- **React Native** — Mobile application framework
+- **Expo** — Development tooling and build workflow
+- **TypeScript** — Type-safe JavaScript
+- **Expo Router** — File-based navigation
+- **AsyncStorage** — Local data persistence
+- **Expo Sensors** — Step-counting functionality where supported
+- **Kotlin / Android APIs** — Planned native Android screen-time integration
 
-```bash
-npm run reset-project
+## 📂 Project Structure
+
+```text
+HabitTracker/
+├── app/
+│   ├── _layout.tsx
+│   └── (tabs)/
+│       ├── _layout.tsx
+│       ├── index.tsx
+│       ├── calendar.tsx
+│       ├── stats.tsx
+│       └── settings.tsx
+├── components/
+│   ├── WaterTracker.tsx
+│   └── StepsTracker.tsx
+├── context/
+│   ├── HabitContext.tsx
+│   └── HealthContext.tsx
+├── assets/
+├── package.json
+└── README.md
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+*The structure above describes the current known project files. Your actual project may contain additional files.*
 
-### Other setup steps
+## ⚙️ Getting Started
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+### Prerequisites
 
-## Learn more
+- Node.js and npm
+- Expo Go for supported Expo features
+- An Android phone for device testing
+- An Expo account if using EAS cloud builds
 
-To learn more about developing your project with Expo, look at the following resources:
+### 1. Clone the repository
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+git clone https://github.com/YOUR_USERNAME/HabitTracker.git
+```
 
-## Join the community
+### 2. Open the project
 
-Join our community of developers creating universal apps.
+```bash
+cd HabitTracker
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the Expo development server
+
+```bash
+npx expo start
+```
+
+Scan the QR code with Expo Go to run the app when its features are supported by Expo Go.
+
+> Custom native Android modules require a development build rather than Expo Go.
+
+## 💾 Data Storage
+
+The application uses AsyncStorage to persist supported habit and health-tracking data locally on the device. Step history is stored by date.
+
+Local storage is device-specific and does not automatically synchronize data across devices.
+
+## 🔐 Permissions
+
+Step tracking may require device sensor support and appropriate permissions.
+
+The planned native screen-time feature will require the user to enable Android's **Usage Access** setting. The app should explain why this access is needed and request it through Android settings.
+
+## 🗺️ Roadmap
+
+- [x] Daily habit tracking
+- [x] Water intake tracking
+- [x] Step tracking
+- [x] Calendar integration for recorded steps
+- [x] Habit statistics and health summary
+- [ ] Native Android screen-time tracking
+- [ ] Focus timer
+- [ ] Digital wellbeing summary
+- [ ] Additional statistics and improvements
+
+## 🎯 Project Goal
+
+The goal is to develop a practical all-in-one mobile application for habit building, daily activity tracking, and personal productivity while learning React Native, Expo, TypeScript, and native Android development.
+
+## 🤝 Contributing
+
+Suggestions, bug reports, and contributions are welcome. Feel free to open an issue or submit a pull request.
+
+## 📄 License
+
+No license has been specified yet. Add a license file if you intend to define permissions for using, modifying, and distributing this project.
+
+---
+
+**Built with React Native, Expo, and TypeScript ❤️**
